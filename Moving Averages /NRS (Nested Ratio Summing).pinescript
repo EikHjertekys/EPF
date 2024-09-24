@@ -1,0 +1,9 @@
+nrs_r = math.sum(s / math.sum(s / s[1], w), w) // Robust - NRS Vanilla
+nrs_s = math.sum(s / math.sum(s / s[1], w), w) // Rensitive - NRS Vanilla
+
+r_logexp = math.exp(math.sum(math.log(s) / math.sum(s / s[1], w), w)) // Robust - NRS with log / exp transformation
+s_logexp = math.exp(math.sum(math.log(s) / math.sum(s[1] / s, w), w)) // Sensitive - NRS with log / exp transformation
+
+n = input.float(2, "n") // N'th Root
+rnr = math.exp(n * math.log(math.sum(math.exp(math.log(s) / n) / math.sum(s / s[1], w), w))) // Robust - N'th Root Mod
+snr = math.exp(n * math.log(math.sum(math.exp(math.log(s) / n) / math.sum(s[1] / s, w), w))) // Sensitive - N'th Root Mod
