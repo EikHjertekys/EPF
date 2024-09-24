@@ -1,0 +1,4 @@
+i = math.abs((math.sum(s, w) / w) - (math.sum(s[1], w - 1) / (w - 1))) // influence to the mean
+x = math.sum(ta.cross(math.sign(s - s[1]) == 1 ? 1 : 0, math.sign(s - s[1]) == -1 ? 1 : 0) == true ? 1 : 0, w) // amount of sign changes
+y = math.abs(math.sum(s > s[1] ? 1 : 0, w) - math.sum(s < s[1] ? 1 : 0, w)) // abs. difference. sum of 'current > previous' - 'current < previous'
+z = math.sum((s[2] > s[1] and s < s[1] ? 1 : 0) + (s[2] > s[1] and s > s[1] ? 1 : 0), w) // amount of peaks and valleys
