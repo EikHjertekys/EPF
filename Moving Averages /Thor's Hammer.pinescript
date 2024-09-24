@@ -1,0 +1,7 @@
+thors_hammer(x, w)=>
+    c = math.round(math.sqrt(w))
+    ma = ta.wma(x, w) // Master Average
+    sc = 0.0 // Sum Counts of Increasing Window Sizes
+    for i = 1 to c
+        sc += ta.wma(x, w + i)
+    (ma * (c + 1)) - sc // Differencing [ out ]
