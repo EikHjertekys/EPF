@@ -1,5 +1,5 @@
 CuIQPR(x, w)=>
-    // Cumulative Interquartlile Percentile Ranges
+    // Cumulative Interquartile Percentile Ranges
     pr = ta.percentrank(x, w)
     
     p9 = ta.cum(pr > 90 and pr < 100 or pr == 100 ? x : 0) / ta.cum(pr > 90 and pr < 100 or pr == 100 ? 1 : 0)
