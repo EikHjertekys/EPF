@@ -1,0 +1,7 @@
+mmuadp(x, w)=>
+    // Mean Maximal Unique Absolute Deviation Pairs
+    r = 0.0
+    for i = 1 to w - 1
+        for e = i to w - 1
+            r += math.abs(x[i - 1] - x[e])
+    r / ((w * (w - 1)) / 2)
