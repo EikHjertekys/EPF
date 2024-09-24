@@ -1,0 +1,1 @@
+ce = math.sum(math.abs((math.floor(s / 100) * 100) - s), w) // Cognitive Ease (Psychological Indicator)
