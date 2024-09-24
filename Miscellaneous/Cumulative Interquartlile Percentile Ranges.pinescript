@@ -1,0 +1,15 @@
+CuIQPR(x, w)=>
+    // Cumulative Interquartlile Percentile Ranges
+    pr = ta.percentrank(x, w)
+    
+    p9 = ta.cum(pr > 90 and pr < 100 or pr == 100 ? x : 0) / ta.cum(pr > 90 and pr < 100 or pr == 100 ? 1 : 0)
+    p8 = ta.cum(pr > 80 and pr < 90 ? x : 0) / ta.cum(pr > 80 and pr < 90 ? 1 : 0)
+    p7 = ta.cum(pr > 70 and pr < 80 ? x : 0) / ta.cum(pr > 70 and pr < 80 ? 1 : 0)
+    p6 = ta.cum(pr > 60 and pr < 70 ? x : 0) / ta.cum(pr > 60 and pr < 70 ? 1 : 0)
+    p5 = ta.cum(pr > 50 and pr < 60 ? x : 0) / ta.cum(pr > 50 and pr < 60 ? 1 : 0)
+    p4 = ta.cum(pr < 50 and pr > 40 ? x : 0) / ta.cum(pr < 50 and pr > 40 ? 1 : 0)
+    p3 = ta.cum(pr < 40 and pr > 30 ? x : 0) / ta.cum(pr < 40 and pr > 30 ? 1 : 0)
+    p2 = ta.cum(pr < 30 and pr > 20 ? x : 0) / ta.cum(pr < 30 and pr > 20 ? 1 : 0)
+    p1 = ta.cum(pr < 20 and pr > 10 ? x : 0) / ta.cum(pr < 20 and pr > 10 ? 1 : 0)
+    p0 = ta.cum(pr < 10 and pr > 0 or pr == 0 ? x : 0) / ta.cum(pr < 10 and pr > 0 or pr == 0 ? 1 : 0)
+    [p0, p1, p2, p3, p4, p5, p6, p7, p8, p9] // out
