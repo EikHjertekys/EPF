@@ -1,0 +1,8 @@
+mmfdp05(x, f, w)=>
+    // Mean of Mean Fraction Decimal Proximity to 0.5
+    // Output Increase: Close, Decrease: Far.
+    r = 0.0 // Result
+    for i = 2 to f + 1 // 1 / [2 ... f + 1]
+        fr = x[0] * (1.0 / i) // Fraction
+        r += -(math.abs((fr - math.floor(fr)) - 0.5) * 2) + 1
+    ta.sma(r / f, w) // Mean - Out
