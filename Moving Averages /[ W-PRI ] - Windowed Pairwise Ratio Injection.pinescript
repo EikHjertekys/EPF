@@ -1,0 +1,6 @@
+wpri(x, w)=> // W-PRI - Linear MA Emulator
+    pa = 0.0 // Pairwise Average
+    for i = 1 to w
+        pa += ((x[0] * 0.5) + (x[i] * 0.5)) / w
+    rc = (x - pa) / pa // Relative Change
+    x - ((x * rc) * 2) // Out
