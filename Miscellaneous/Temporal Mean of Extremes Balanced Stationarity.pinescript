@@ -1,0 +1,3 @@
+tmebs(x, w)=>
+    // Temporal Mean of Extremes Balanced Stationarity
+    x - x[math.round(math.abs(ta.highestbars(x, w) + ta.lowestbars(x, w)) / 2)]
