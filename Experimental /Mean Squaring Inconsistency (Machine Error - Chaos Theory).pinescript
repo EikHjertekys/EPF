@@ -1,8 +1,0 @@
-msqi(x, n, w)=>
-    // Mean Squaring Inconsistency 
-
-    r = 0.0
-    for i = 1 to n
-        r += math.pow(x, 2) 
-
-    ta.sma(math.abs(math.pow(x, 2) - (r / n)), w)
