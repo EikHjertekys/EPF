@@ -1,0 +1,16 @@
+sof(x, w)=>
+    // Second-Order Frequency
+    
+    f1 = 0.0 // Frequency Count
+    f2 = 0.0 // Second-Order Frequency
+    rd = math.round(x) // Round Source
+
+    // Count Occurences - rd[0] & rd[i]
+    for i = 1 to w
+        f1 += rd == rd[i] ? 1 : 0
+    
+    // Count Occurences - f1[0] & f[i]
+    for i = 1 to w
+        f2 += f1 == f1[i] ? 1 : 0
+        
+    f2 // Out
