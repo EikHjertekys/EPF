@@ -1,5 +1,5 @@
-mmldp(x, w)=>
-    // Mean Maximal Logarithmic Difference Pairs
+mmuldp(x, w)=>
+    // Mean Maximal Unique Logarithmic Difference Pairs
     r = 0.0
     for i = 1 to w - 1
         for e = i to w - 1
