@@ -1,4 +1,0 @@
-lwcc(n)=>
-    // [  Linear Weighting Compensation Coefficient  ] 
-    // (src * x) - ((y1 * 1) + (y2 * 2) + (y3 * 3)) ..
-    ((1 / 2.0) * math.pow(n, 2)) + ((1 / 2.0) * n) + 1
