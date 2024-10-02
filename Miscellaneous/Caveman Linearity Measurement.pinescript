@@ -1,0 +1,11 @@
+clm(x)=>
+    // Caveman Linearity Measurement
+    i = 0
+    for e = 1 to 1000
+        i += 1
+        x1 = math.round(x[0] / e) * e
+        x2 = math.round(x[1] / e) * e
+        x3 = math.round(x[2] / e) * e
+        if x1 == x2 and x2 == x3
+            break
+    i
