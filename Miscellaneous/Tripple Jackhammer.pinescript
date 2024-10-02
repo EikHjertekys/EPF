@@ -1,5 +1,5 @@
-clm(x)=>
-    // Caveman Linearity Measurement
+tj(x)=>
+    // Tripple Jackhammer
     i = 0
     for e = 1 to 1000
         i += 1
