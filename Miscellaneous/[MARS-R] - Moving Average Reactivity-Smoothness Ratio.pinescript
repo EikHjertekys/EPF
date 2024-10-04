@@ -1,0 +1,12 @@
+mars_r(x, w)=>
+    // Moving Average Reactivity-Smoothness Ratio
+
+    ma = ta.sma(x, w) // Simple Moving Average 'Window Size: w'
+    // Logarithmic Relative Change (%) 'source / sma * 100'
+    xm = math.log(x / ma) * 100 
+    // Logarithmic First-Order Relative Change 'ma[0], ma[1]'
+    // * 1000 # balances influence between xm and mm
+    mm = math.log(ma / ma[1]) * 1000 
+    // Logarithmic Ratio of the Sums of Absolutes of 'xm' and 'mm'
+    // 'Window Size: w' - Output
+    math.log(math.sum(math.abs(xm), w) / math.sum(math.abs(mm), w))
