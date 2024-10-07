@@ -1,10 +1,13 @@
-esf(x)=>
+esf(x, w)=>
     // Eik's Shark Fin
-    
+    // Momentum / Periodicity
+
     var float f = 0 // Initialize 'fin'
+    m = ta.sma(s, w) // Mean
+
     if f < x // 'f' Sum < x ? 
-        // Sum Abs. Deviation (x - two-point avg.)
-        f += math.abs(x - ((x + x[1]) / 2))
+        // Sum Abs. Deviation (x - m)
+        f += math.abs(x - m)
     else // 'f' Sum > x ? 
         f := 0 // Reinitialize
     f // Return
