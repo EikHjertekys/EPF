@@ -1,0 +1,10 @@
+esf(x)=>
+    // Eik's Shark Fin
+    
+    var float f = 0 // Initialize 'fin'
+    if f < x // 'f' Sum < x ? 
+        // Sum Abs. Deviation (x - two-point avg.)
+        f += math.abs(x - ((x + x[1]) / 2))
+    else // 'f' Sum > x ? 
+        f := 0 // Reinitialize
+    f // Return
