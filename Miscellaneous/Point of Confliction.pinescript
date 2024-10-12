@@ -1,0 +1,6 @@
+PointOfConfliction(x, w)=>
+    // Point of Confliction
+    // [ ft : fast trend, st : slow trend ]
+    ft = (ta.sma(s, math.round(w / 2)) - ta.sma(s, w)) / ta.sma(s, w * 2)
+    st = -((ta.sma(s, w * 2) - ta.sma(s, w)) / ta.sma(s, math.round(w / 2)))
+    math.sign(ft) != math.sign(st) ? math.abs(ft - st) : 0
