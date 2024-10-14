@@ -1,5 +1,5 @@
+![EiksPineForestBanner](https://github.com/user-attachments/assets/9070db34-1a41-49a7-89cb-335417b95fe9)
 
-![Banner](https://github.com/user-attachments/assets/d211c592-4793-4c6e-ba60-9e129cfc03d6)
 
 EPF | Eik's Pine Forest, is my personal collection of original Pine Script™ (Registered Trademark of TradingView. Non-affiliated) Functions and experiments. 
 Further documentation : TBA
