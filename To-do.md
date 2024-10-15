@@ -4,4 +4,5 @@
  - Documentation (Technical, Theoretical and Conceptual)
  - Add Comments '//'
  - Add Visualizations / Screenshots
+ - Reformat Folder Categories 
 
