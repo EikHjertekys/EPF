@@ -1,0 +1,25 @@
+usrfa(x, w)=>
+    // Unintelligent Self-Referential Forecasting Algorithm
+
+    z = 0.0 // Bars Back Count (Identical First-Order Difference)
+    y = 0.0 // Mean Logarithmic Change (from z to (z - w) - 1) ..
+    q = 0.0 // Mean Logarithmic Change (from 0 to w - 1) ........     
+    o = 0.0 // [Return] Mean Difference (y - q) (from 0 to w - 1)
+
+    for i = 1 to 1000
+        if x[0] - x[1] == x[i] - x[i + 1] 
+            z := i
+            break
+
+    z := z < w ? w : z // Window Fill Check
+
+    for e = z to z - w
+        y += math.log(x[e] / x[e + 1]) / ((z - (z - w)) + 1)
+
+    for u = 0 to w - 1
+        q += math.log(x[u] / x[u + 1]) / w
+
+    for a = 0 to w - 1
+        o += (y - q)[a] / w
+
+    o
