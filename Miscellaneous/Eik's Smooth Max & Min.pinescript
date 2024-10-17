@@ -1,0 +1,9 @@
+esmm(x, w)=>
+    // Eik's Smooth Max & Min
+    max = 0.0
+    min = 0.0
+    for i = 1 to w - 1
+        for e = i to w - 1
+            max += math.max(x[i - 1], x[e])
+            min += math.min(x[i - 1], x[e])
+    [(max / ((w * (w - 1)) / 2)), (min / ((w * (w - 1)) / 2))]
