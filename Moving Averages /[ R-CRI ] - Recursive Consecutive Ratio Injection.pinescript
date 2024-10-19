@@ -1,7 +1,15 @@
 n = input.float(0.2, "N - Fractional Injection")
 r = input.int(10, "R - Recursions")
 
-rcri(x, n, r)=> // R-CRI - Non-Linear MA Emulator
+rcri(x, n, r)=>
+
+    // Eik Hjertekys [2024] ʕつ•ᴥ•ʔつー★･.*･｡ﾟ 
+    // Recursive Consecutive Ratio Injection
+
+    // [!] R-CRI is a filter. It can be used
+    // for emulating various non-linear MA's
+    // as well as providing more granular -
+    // control for smoothing in general! ...
 
     // ema(20) ~ n: 0.45, r: 4
     // wma(20) ~ n:  0.5, r: 3
