@@ -1,0 +1,19 @@
+wsgma(x, w)=>
+
+    //         [ W - SGMA : Weighted Sparsity Gradient Moving Average ]
+    //         [            Eik Hjertekys - 2024 - Denmark            ]
+
+    a = 0.0 // Weighted Sparse Mean : Index[i * e] (i = 1 ? 0 to w - 1)
+    b = 0.0 // Standard Weighted Mean of 'w' Instances of 'a' .........
+    
+    for i = 1 to w
+        // i = 1 ? 0 to w - 1
+        for e = i == 1 ? 0 : 1 to i == 1 ? w - 1 : w
+            // Sparse Sum (Multiplicative Indexing) - Lin Weight (0>1).
+            a += nz(x[i * e], x) * ((w + 1) - e)
+        // Weighted Sum of Weighted Sparse Means. Non-Sparse > Sparse..
+        b += (a / ((w * (w + 1)) / 2)) * ((w + 1) - (i == 1 ? i + 1 : i))
+        // Reinitialize 'a' to zero.
+        a := 0
+    // Return : Weighted Mean of Weighted Sparse Means 
+    b / ((w * (w + 1)) / 2)
