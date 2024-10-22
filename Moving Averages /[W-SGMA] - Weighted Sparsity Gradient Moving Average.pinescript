@@ -3,6 +3,9 @@ wsgma(x, w)=>
     //         [ W - SGMA : Weighted Sparsity Gradient Moving Average ]
     //         [            Eik Hjertekys - 2024 - Denmark            ]
 
+    //         [                 [!] O(w^2) Complexity                ]
+    //         [    Did a rock just break your window? Use w < 100    ]
+
     a = 0.0 // Weighted Sparse Mean : Index[i * e] (i = 1 ? 0 to w - 1)
     b = 0.0 // Standard Weighted Mean of 'w' Instances of 'a' .........
     
