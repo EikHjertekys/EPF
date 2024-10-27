@@ -1,0 +1,25 @@
+n = input.float(0.2, "N - Fractional Injection")
+r = input.int(10, "R - Recursions")
+
+rcri(x, n, r)=>
+
+    // Eik Hjertekys [2024] ʕつ•ᴥ•ʔつー★･.*･｡ﾟ 
+    // Recursive Consecutive Ratio Injection
+
+    // [!] R-CRI is a filter. It can be used
+    // for emulating various non-linear MA's
+    // as well as providing more granular -
+    // control for smoothing in general! ...
+
+    // ema(20) ~ n: 0.45, r: 4
+    // wma(20) ~ n:  0.5, r: 3
+    // hma(20) ~ n:  0.5, r: 2
+  
+    mr = x // Master Recursion
+    for i = 1 to r
+        ri = mr // Recursion Iteration
+        r1 = ri + (ri * ((ri - nz(ri[1], x)) / nz(ri[1], x)))
+        r2 = (ri - r1) / r1
+        ri := ri + ((ri * r2) * n)
+        mr := ri
+    mr // - Out
